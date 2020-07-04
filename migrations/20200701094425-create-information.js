@@ -17,11 +17,14 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      id_banner: {
-        type: Sequelize.INTEGER
-      },
       description: {
         type: Sequelize.TEXT
+      },
+      id_sub_category: {
+        type: Sequelize.INTEGER
+      },
+      images: {
+        type: Sequelize.STRING
       }
     });
   },

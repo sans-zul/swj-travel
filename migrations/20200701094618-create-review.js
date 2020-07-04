@@ -11,6 +11,9 @@ module.exports = {
       id_category: {
         type: Sequelize.INTEGER
       },
+      id_sub_category: {
+        type: Sequelize.INTEGER
+      },
       id_rider: {
         type: Sequelize.INTEGER
       },
