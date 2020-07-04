@@ -1,0 +1,97 @@
+<% include ../template/head.ejs %>
+<% include ../template/style.ejs %>
+
+<!-- BEGIN: Body-->
+
+<body
+    class="vertical-layout vertical-menu-modern 1-column  navbar-sticky footer-static bg-full-screen-image  blank-page blank-page"
+    data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- login page start -->
+                <section id="auth-login" class="row flexbox-container">
+                    <div class="col-xl-8 col-11">
+                        <div class="card bg-authentication mb-0">
+                            <div class="row m-0">
+                                <!-- left section-login -->
+                                <div class="col-md-6 col-12 px-0">
+                                    <div
+                                        class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                                        <div class="card-header pb-1">
+                                            <div class="card-title text-center">
+                                                <img src="<%= base_url %>assets/img/logo_2.PNG" alt="logo"
+                                                    width="100px">
+                                                <h4 class="text-center mb-2">To introduce and promote local tourism
+                                                    objects in West Java to the world by creating a coherent brand that
+                                                    is in harmony with West Javanese culture and society.</h4>
+                                            </div>
+                                        </div>
+                                        <% if(alert.message != '') { %>
+                                        <div class="alert alert-<%= alert.status %>">
+                                            <%= alert.message %>
+                                        </div>
+                                        <% } %>
+                                        <div class="card-content">
+                                            <div class="card-body">
+                                                <form action="" method="POST">
+                                                    <div class="form-group mb-50">
+                                                        <label class="text-bold-600"
+                                                            or="exampleInputEmail1">Username</label>
+                                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                                            placeholder="Username" name="username"
+                                                            <% if (alert.txt_username != "") { %>
+                                                            value="<%= alert.txt_username %>" <% } %> autofocus
+                                                            required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-bold-600"
+                                                            for="exampleInputPassword1">Password</label>
+                                                        <input type="password" class="form-control"
+                                                            id="exampleInputPassword1" placeholder="Password"
+                                                            name="password" required>
+                                                    </div>
+                                                    <!-- <div
+                                                        class="form-group d-flex  flex-md-row flex-column  justify-content-between align-items-center">
+                                                        <div class="text-left">
+                                                            <div class="checkbox checkbox-sm">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                    id="exampleCheck1">
+                                                                <label class="checkboxsmall"
+                                                                    for="exampleCheck1"><small>Keep me logged
+                                                                        in</small></label>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <button type="submit"
+                                                        class="btn btn-primary glow w-100 position-relative">Login<i
+                                                            id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- right section image -->
+                                <div class="col-md-6 d-md-block d-none text-center align-self-center p-3">
+                                    <div class="card-content">
+                                        <img class="img-fluid" src="<%= base_url %>assets/img/logo_1.PNG" height="800px"
+                                            alt="branding logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- login page ends -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+    <% include ../template/script.ejs %>

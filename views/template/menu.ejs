@@ -1,0 +1,145 @@
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="/dashboard">
+                    <div class="brand-logo">
+                        <img class="logo ml-0 mr-0" src="<%= base_url %>assets/img/logo_4.png" />
+                    </div>
+                    <h2 class="brand-text mb-0 ml-0">DASHBOARD</h2>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class="navigation-header">
+                <span>Dashboard</span>
+            </li>
+
+            <% for( let i = 0; i < category.length; i++ ) { %>
+            <% if (category[i].status == 1) { %>
+            <li class="<%= title == category[i].name.trim() ? 'active ' : '' %>nav-item sub-menu-header swj">
+                <a href="<%= category[i].url.trim() %>">
+                    <i class="menu-livicon" data-icon="<%= category[i].icon.trim() %>"></i>
+                    <span class="menu-title" data-i18n="Raise Support"><%= category[i].name.trim() %></span>
+                </a>
+            </li>
+            <% } %>
+            <% } %>
+
+            <!-- <li class="<%= title == 'Wisata' ? 'active ' : '' %>nav-item sub-menu-header swj">
+                <a href="/swj/wisata">
+                    <i class="menu-livicon" data-icon="map"></i>
+                    <span class="menu-title" data-i18n="Raise Support">Wisata</span>
+                </a>
+            </li>
+            <li class="<%= title == 'Hotel' ? 'active ' : '' %>nav-item sub-menu-header swj">
+                <a href="/swj/hotel">
+                    <i class="menu-livicon" data-icon="home"></i>
+                    <span class="menu-title" data-i18n="Raise Support">Hotel</span>
+                </a>
+            </li>
+            <li class="<%= title == 'Restaurant' ? 'active ' : '' %>nav-item sub-menu-header swj">
+                <a href="/swj/restaurant">
+                    <i class="menu-livicon" data-icon="apple"></i>
+                    <span class="menu-title" data-i18n="Raise Support">Restaurant</span>
+                </a>
+            </li>
+            <li class="<%= title == 'Shopping' ? 'active ' : '' %>nav-item sub-menu-header swj">
+                <a href="/swj/shopping">
+                    <i class="menu-livicon" data-icon="shoppingcart"></i>
+                    <span class="menu-title" data-i18n="Raise Support">Shopping</span>
+                </a>
+            </li> -->
+            <li class="navigation-header">
+                <span>Master</span>
+            </li>
+            <li class="nav-item has-sub menu-header">
+                <a href="">
+                    <i class="menu-livicon" data-icon="gears"></i>
+                    <span class="menu-title" data-i18n="">Master</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="<%= title == "Data Informasi" ? 'active' : '' %>">
+                        <a href="/master/informasi">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Data Informasi</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Banner" ? 'active' : '' %>">
+                        <a href="/master/banner">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Banner</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Review" ? 'active' : '' %>">
+                        <a href="/master/review">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Review</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-sub menu-header">
+                <a href="">
+                    <i class="menu-livicon" data-icon="unlock"></i>
+                    <span class="menu-title" data-i18n="">System</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="<%= title == "User Management" ? 'active' : '' %>">
+                        <a href="/system/user">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">User Management</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Role" ? 'active' : '' %>">
+                        <a href="/system/role">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Role</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-sub menu-header">
+                <a href="">
+                    <i class="menu-livicon" data-icon="users"></i>
+                    <span class="menu-title" data-i18n="">App</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="<%= title == "Rider" ? 'active' : '' %>">
+                        <a href="/users/rider">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Rider</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Category" ? 'active' : '' %>">
+                        <a href="/users/category">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Category SWT</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Saved" ? 'active' : '' %>">
+                        <a href="/users/saved">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Saved</span>
+                        </a>
+                    </li>
+                    <li class="<%= title == "Notifikasi" ? 'active' : '' %>">
+                        <a href="/users/notifikasi">
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item" data-i18n="">Notifikasi</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navigation-header">
+                <span>Tron.id Technology</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->

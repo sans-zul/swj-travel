@@ -1,0 +1,112 @@
+<% include ../../template/head.ejs %>
+<% include ../../template/style.ejs %>
+<% include ../../template/header.ejs %>
+<% include ../../template/menu.ejs %>
+
+<!-- Content -->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h5 class="content-header-title float-left pr-1 mb-0">
+                            <%= swj.label %>
+                        </h5>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/">
+                                        <i class="bx bx-home-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="">SWJ</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="<%= swj.url %>">
+                                        List <%= swj.label %>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+
+            <!-- Column selectors with Export Options and print table -->
+            <section id="column-selectors">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">List <%= swj.label %></h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row" style="margin: 20px 0 -20px 0;">
+                                    <div class="card-body card-dashboard col-md-3">
+                                        <form id="form_action_data" method="POST">
+                                            <div class="input-group">
+                                                <select name="action_data" class="custom-select form-control"
+                                                    id="data_action" required>
+                                                    <option value="" selected>Data Action</option>
+                                                    <option value="excel">Export Excel</option>
+                                                    <option value="delete">Delete Data</option>
+                                                </select>
+                                                <div class="input-group-append" id="button-addon2">
+                                                    <button class="btn btn-outline-dark" name="type"
+                                                        type="submit">Apply</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-body card-dashboard col-md-3" style="margin-left: -40px;">
+                                        <a href="<%= swj.url %>/add" type="button" class="btn btn-outline-primary">
+                                            <i class="bx bx-plus"></i>
+                                            <span class="align-middle">Add</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body card-dashboard">
+                                    <table class="list-table-sans display nowrap cell-border cell-border compact stripe"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr id="column_table">
+                                                <th class="dt-head-center">No</th>
+                                                <th class="dt-head-center">Nama</th>
+                                                <th class="dt-head-center">Description</th>
+                                                <th class="dt-head-center">Address</th>
+                                                <th class="dt-head-center">Price</th>
+                                                <th class="dt-head-center">Longitude</th>
+                                                <th class="dt-head-center">Latitude</th>
+                                                <th class="dt-head-center">Image</th>
+                                                <th class="dt-head-center">Read Count</th>
+                                                <th class="dt-head-center">Featured</th>
+                                                <th class="dt-head-center">Rating</th>
+                                                <th class="dt-head-center">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Column selectors with Export Options and print table -->
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- End Content -->
+
+<% include ../../template/footer.ejs %>
+<% include ../../template/script.ejs %>
+<% include ../../template/bottom.ejs %>

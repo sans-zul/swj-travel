@@ -1,0 +1,151 @@
+<% include ../../template/head.ejs %>
+<% include ../../template/style.ejs %>
+<% include ../../template/header.ejs %>
+<% include ../../template/menu.ejs %>
+
+<!-- Content -->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h5 class="content-header-title float-left pr-1 mb-0">List Data Informasi</h5>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/">
+                                        <i class="bx bx-home-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="">Master</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="/master/informasi">List Informasi</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="">Add</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+
+            <!-- Basic Horizontal form layout section start -->
+            <section id="basic-horizontal-layouts">
+                <div class="row match-height">
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Form Data Informasi</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form id="add_data_form">
+                                        <div class=" form-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Category</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <select class="custom-select" id="category" name="category" required
+                                                        data-validation-required-message="This field is required">
+                                                        <option value="" selected>Select Category SWJ App</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Nama Produk</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="nama" class="form-control" name="nama"
+                                                        required placeholder="nama produk seperti cendol, kasur, dll"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Price</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="price" class="form-control" name="price"
+                                                        required placeholder="<%= Math.floor(Math.random() * 100) %>000"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Deskripsi</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <textarea type="text" id="description" class="form-control"
+                                                        name="description" placeholder="Deskripsi" required
+                                                        data-validation-required-message="This field is required"></textarea>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Image</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="image" class="form-control" name="image"
+                                                        required placeholder="upload"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-sm-12 d-flex justify-content-end">
+                                                    <button type="submit"
+                                                        class="btn btn-primary mr-1 mb-1 form-group">Add</button>
+                                                    <button type="reset"
+                                                        class="btn btn-light-secondary mr-1 mb-1">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic Horizontal form layout section end -->
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- End Content -->
+
+<% include ../../template/footer.ejs %>
+<% include ../../template/script.ejs %>
+<script>
+    async function add_informasi_script() {
+
+        let category = await fetch(window.location.pathname + '/category', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json());
+
+        for (let i = 0; i < category.length; i++) {
+            for (let j = 0; j < category[i].list.length; j++) {
+                let option = new Option(category[i].category.name.trim() + " | " + category[i].list[j].nama.trim(),
+                    category[i].list[j].id);
+
+                $('#category').append(option);
+            }
+        }
+
+        if (category.length == 0) {
+            alert("Harap Masukan Data dari setiap Category");
+            window.location = "/master/informasi";
+        }
+    }
+    add_informasi_script();
+
+    // $('#category').append(new Option())
+</script>
+<% include ../../template/bottom.ejs %>

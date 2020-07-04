@@ -1,0 +1,126 @@
+<% include ../../template/head.ejs %>
+<% include ../../template/style.ejs %>
+<% include ../../template/header.ejs %>
+<% include ../../template/menu.ejs %>
+
+<!-- Content -->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h5 class="content-header-title float-left pr-1 mb-0">List Category</h5>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/">
+                                        <i class="bx bx-home-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="">App</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="/users/category">List Category</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="">Add</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+
+            <!-- Basic Horizontal form layout section start -->
+            <section id="basic-horizontal-layouts">
+                <div class="row match-height">
+                    <div class="col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Form Category</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form id="add_data_form">
+                                        <div class=" form-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Nama</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="nama" class="form-control" name="nama"
+                                                        required placeholder="wisata, hotel, restaurant, shopping"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>URL</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="url" class="form-control" name="url" required
+                                                        placeholder="/swj/wisata"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-8">
+                                                    <a href="https://livicons.com/icons-solid.php">ICONS</a>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Icon</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <input type="text" id="icon" class="form-control" name="icon"
+                                                        required placeholder="shoppingcart"
+                                                        data-validation-required-message="This field is required">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Deskripsi</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <textarea type="text" id="description" class="form-control"
+                                                        name="description" placeholder="Menambahkan fitur baru" required
+                                                        data-validation-required-message="This field is required"></textarea>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Status</label>
+                                                </div>
+                                                <div class="col-md-8 form-group">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="checkbox-input" id="status"
+                                                            checked="" name="status">
+                                                        <label for="status">Active</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 d-flex justify-content-end">
+                                                    <button type="submit"
+                                                        class="btn btn-primary mr-1 mb-1 form-group">Add</button>
+                                                    <button type="reset"
+                                                        class="btn btn-light-secondary mr-1 mb-1">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic Horizontal form layout section end -->
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- End Content -->
+
+<% include ../../template/footer.ejs %>
+<% include ../../template/script.ejs %>
+<% include ../../template/bottom.ejs %>
