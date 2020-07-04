@@ -1,5 +1,5 @@
 const global = {
-    baseUrl: "http://localhost:3000/",
+    baseUrl: "https://swj-travel.herokuapp.com/",
 
 }
 
